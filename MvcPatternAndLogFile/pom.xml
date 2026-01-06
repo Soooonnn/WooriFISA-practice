@@ -1,0 +1,71 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fisa</groupId>
+	<artifactId>step05_mvcPattern</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<release>17</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- jdk이외에서 제공하는 library 정보 설정하는 설정 영역 -->
+	<dependencies>
+
+		<!--lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.42</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--slf4j, log기록이 추상화되어 있는 library : 실 구현체는 log4j 사용 
+참고: log4j 1버전 사용하는지 2버전 사용하는지에 따라 설정이 다르다.
+-->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+
+		<!--log4j, log기록의 실 구현체 library -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>2.20.0</version>
+		</dependency>
+
+		<!--junit, java 기반의 단위 test library
+사용 방법: main() 메소드 없이도 실행 가능, 단 @Test 실행 어노테이션 사용
+버전: spring boot에서는 junit5버전, 현업에서는 junit4와 junit5 둘 다 사용 
+우린 junit4버전을 사용할 것임-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>
